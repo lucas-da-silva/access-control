@@ -1,5 +1,6 @@
 package com.trybe.acc.java.controledeacesso;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class Principal {
     while (isToAddPeople) {
       System.out.println("Entre com o número correspondente à opção desejada:");
       System.out.println(
-          "1 - Acessar o estabelecimento\r\n" + "2 - Finalizar sistema e mostar relatório");
+              "1 - Acessar o estabelecimento\r\n" + "2 - Finalizar sistema e mostar relatório");
       short option = Short.parseShort(scanner.next());
 
       if (option == 1) {
@@ -49,15 +50,17 @@ public class Principal {
     double percentageAdultPeople = ((double) adultPeople / totalPeople) * 100;
     double percentageOlderAdultPeople = ((double) olderAdultPeople / totalPeople) * 100;
 
+
     System.out.println("----- Quantidade -----");
     System.out.println("menores: " + underagePeople);
     System.out.println("adultas: " + adultPeople);
     System.out.println("a partir de 50: " + olderAdultPeople);
 
+    DecimalFormat df = new DecimalFormat("0.00");
     System.out.println("\r\n----- Percentual -----");
-    System.out.println("menores: " + percentageUnderagePeople);
-    System.out.println("adultas: " + percentageAdultPeople);
-    System.out.println("a partir de 50: " + percentageOlderAdultPeople);
+    System.out.println("menores: " + df.format(percentageUnderagePeople));
+    System.out.println("adultas: " + df.format(percentageAdultPeople));
+    System.out.println("a partir de 50: " + df.format(percentageOlderAdultPeople));
 
     System.out.println("Total: " + totalPeople);
     scanner.close();
