@@ -20,7 +20,7 @@ public class Principal {
     while (isToAddPeople) {
       System.out.println("Entre com o número correspondente à opção desejada:");
       System.out.println(
-              "1 - Acessar o estabelecimento\r\n" + "2 - Finalizar sistema e mostar relatório");
+          "1 - Acessar o estabelecimento\r\n" + "2 - Finalizar sistema e mostar relatório");
       short option = Short.parseShort(scanner.next());
 
       if (option == 1) {
@@ -58,9 +58,9 @@ public class Principal {
 
     DecimalFormat df = new DecimalFormat("0.00");
     System.out.println("\r\n----- Percentual -----");
-    System.out.println("menores: " + df.format(percentageUnderagePeople));
-    System.out.println("adultas: " + df.format(percentageAdultPeople));
-    System.out.println("a partir de 50: " + df.format(percentageOlderAdultPeople));
+    System.out.println("menores: " + df.format(percentageUnderagePeople) + "%");
+    System.out.println("adultas: " + df.format(percentageAdultPeople) + "%");
+    System.out.println("a partir de 50: " + df.format(percentageOlderAdultPeople) + "%");
 
     System.out.println("Total: " + totalPeople);
     scanner.close();
